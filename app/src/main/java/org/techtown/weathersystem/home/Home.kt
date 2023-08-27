@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 import org.techtown.weathersystem.Jtbc
 import org.techtown.weathersystem.Kbs
 import org.techtown.weathersystem.R
@@ -15,8 +16,13 @@ import org.techtown.weathersystem.WeatherData
 import org.techtown.weathersystem.databinding.FragmentHomeBinding
 import org.techtown.weathersystem.di.WeatherDataProvider
 import org.techtown.weathersystem.di.WeatherDataProviderImpl
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class Home : Fragment() {
+
+    @Inject
+    lateinit var weatherData: WeatherData
 
     private var _binidng: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding
@@ -24,8 +30,8 @@ class Home : Fragment() {
 
 //    private var weatherData: WeatherData = WeatherData.getInstance()!!
 
-    private val weatherDataProvider : WeatherDataProvider = WeatherDataProviderImpl
-    private var weatherData : WeatherData = weatherDataProvider.provideWeatherData()
+//    private val weatherDataProvider : WeatherDataProvider = WeatherDataProviderImpl
+//    private var weatherData : WeatherData = weatherDataProvider.provideWeatherData()
 
     private var isRegisterObservers : Boolean = false
 
