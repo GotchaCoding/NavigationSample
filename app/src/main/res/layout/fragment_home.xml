@@ -24,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@drawable/gradient"
+                android:paddingStart="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -34,8 +35,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:text="옵저버 해제"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/btnRegisterSbs"
@@ -50,9 +51,8 @@
                     android:id="@+id/imgSbs"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/image_shape"
                     android:layout_marginTop="10dp"
+                    android:background="@drawable/image_shape"
                     android:textSize="40sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -79,8 +79,8 @@
                     android:id="@+id/tvSBSTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="온도"
                     android:layout_marginStart="15dp"
+                    android:text="℃"
                     android:textSize="30sp"
                     app:layout_constraintStart_toEndOf="@id/temperature"
                     app:layout_constraintTop_toBottomOf="@id/imgSbs" />
@@ -89,8 +89,8 @@
                     android:id="@+id/tvSBSHumi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="습도"
                     android:layout_marginStart="15dp"
+                    android:text="%"
                     android:textSize="30sp"
                     app:layout_constraintStart_toEndOf="@id/humidity"
                     app:layout_constraintTop_toBottomOf="@id/tvSBSTemp" />
@@ -102,9 +102,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="@drawable/gradient"
-                app:layout_constraintTop_toBottomOf="@id/cons1"
+                android:paddingStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/cons1">
 
                 <Button
                     android:id="@+id/btnRemoveKbs"
@@ -112,8 +113,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:text="옵저버 해제"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/btnRegisterKbs"
@@ -129,7 +130,6 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
                     android:background="@drawable/image_shape"
                     android:textSize="40sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -158,7 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="온도"
+                    android:text="℃"
                     android:textSize="30sp"
                     app:layout_constraintStart_toEndOf="@id/temperature2"
                     app:layout_constraintTop_toBottomOf="@id/imgKbs" />
@@ -168,7 +168,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="습도"
+                    android:text="%"
                     android:textSize="30sp"
                     app:layout_constraintStart_toEndOf="@id/humidity2"
                     app:layout_constraintTop_toBottomOf="@id/tvKBSTemp" />
@@ -180,6 +180,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:background="@drawable/gradient"
+                android:paddingStart="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -193,8 +194,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:text="옵저버 해제"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/btnRegisterJtbc"
@@ -209,7 +210,6 @@
                     android:id="@+id/imgJtbc"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/image_shape"
                     android:textSize="40sp"
@@ -239,7 +239,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="온도"
+                    android:text="℃"
                     android:textSize="30sp"
                     app:layout_constraintStart_toEndOf="@id/temperature3"
                     app:layout_constraintTop_toBottomOf="@id/imgJtbc" />
@@ -249,7 +249,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="습도"
+                    android:text="%"
                     android:textSize="30sp"
                     app:layout_constraintStart_toEndOf="@id/humidity3"
                     app:layout_constraintTop_toBottomOf="@id/tvJTBCTemp" />

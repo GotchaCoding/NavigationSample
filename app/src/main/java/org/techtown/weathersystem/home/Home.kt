@@ -13,6 +13,8 @@ import org.techtown.weathersystem.R
 import org.techtown.weathersystem.Sbs
 import org.techtown.weathersystem.WeatherData
 import org.techtown.weathersystem.databinding.FragmentHomeBinding
+import org.techtown.weathersystem.di.WeatherDataProvider
+import org.techtown.weathersystem.di.WeatherDataProviderImpl
 
 class Home : Fragment() {
 
@@ -20,7 +22,12 @@ class Home : Fragment() {
     private val binding: FragmentHomeBinding
         get() = _binidng!!
 
-    private var weatherData: WeatherData = WeatherData.getInstance()!!
+//    private var weatherData: WeatherData = WeatherData.getInstance()!!
+
+    private val weatherDataProvider : WeatherDataProvider = WeatherDataProviderImpl
+    private var weatherData : WeatherData = weatherDataProvider.provideWeatherData()
+
+    private var isRegisterObservers : Boolean = false
 
     val kbs: Kbs = Kbs()
     val sbs: Sbs = Sbs()
@@ -38,16 +45,19 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        registerObservers()
+
+        if(!isRegisterObservers) {
+            registerObservers()    //옵저버 등록은 최초 한번만 실행
+            isRegisterObservers = true
+        }
 
         binding.apply{
             temperature.text = sbs.temperature.toString()
             humidity.text = sbs.humidity.toString()
-            temperature2.text = sbs.temperature.toString()
-            humidity2.text = sbs.humidity.toString()
-            temperature3.text = sbs.temperature.toString()
-            humidity3.text = sbs.humidity.toString()
-
+            temperature2.text = kbs.temperature.toString()
+            humidity2.text = kbs.humidity.toString()
+            temperature3.text = jtbc.temperature.toString()
+            humidity3.text = jtbc.humidity.toString()
         }
 
     }
@@ -65,27 +75,27 @@ class Home : Fragment() {
         binding.apply {
             btnRemoveSbs.setOnClickListener {
                 unremoveObserverSbs()
-                Toast.makeText(context, "옵저버 해제", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "옵저버 해제", Toast.LENGTH_SHORT).show()
             }
             btnRemoveKbs.setOnClickListener {
                 unremoveObserverKbs()
-                Toast.makeText(context, "옵저버 해제", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "옵저버 해제", Toast.LENGTH_SHORT).show()
             }
             btnRemoveJtbc.setOnClickListener {
                 unremoveObserverJtbc()
-                Toast.makeText(context, "옵저버 해제", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "옵저버 해제", Toast.LENGTH_SHORT).show()
             }
             btnRegisterSbs.setOnClickListener {
                 registerObserverSbs()
-                Toast.makeText(context, "옵저버 등록", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "옵저버 등록", Toast.LENGTH_SHORT).show()
             }
             btnRegisterKbs.setOnClickListener {
                 registerObserverKbs()
-                Toast.makeText(context, "옵저버 등록", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "옵저버 등록", Toast.LENGTH_SHORT).show()
             }
             btnRegisterJtbc.setOnClickListener {
                 registerObserverJtbc()
-                Toast.makeText(context, "옵저버 등록", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "옵저버 등록", Toast.LENGTH_SHORT).show()
             }
 
 

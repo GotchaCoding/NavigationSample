@@ -1,19 +1,22 @@
 package org.techtown.weathersystem.temp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import org.techtown.weathersystem.Observer
 import org.techtown.weathersystem.R
 import org.techtown.weathersystem.WeatherData
 import org.techtown.weathersystem.databinding.FragmentTempBinding
+import org.techtown.weathersystem.di.WeatherDataProvider
+import org.techtown.weathersystem.di.WeatherDataProviderImpl
 
-class Temp : Fragment(){
-    private var weatherData: WeatherData = WeatherData.getInstance()!!
+class Temp : Fragment() {
+//    private var weatherData: WeatherData = WeatherData.getInstance()!!
+
+    private val weatherDataProvider: WeatherDataProvider = WeatherDataProviderImpl
+    private val weatherData: WeatherData = weatherDataProvider.provideWeatherData()
 
     private var _binidng: FragmentTempBinding? = null
     private val binding: FragmentTempBinding
@@ -37,7 +40,7 @@ class Temp : Fragment(){
 
             btnTemp.setOnClickListener {
                 val resultNum = edtTemp.text.toString().toInt()
-            weatherData.setTempChanged(resultNum)
+                weatherData.setTempChanged(resultNum)
             }
         }
     }
