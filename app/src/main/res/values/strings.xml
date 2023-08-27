@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">WeatherSystem</string>
+    <string name="title_home">Home</string>
+    <string name="title_temp">Temp</string>
+    <string name="title_humi">Humidity</string>
+
+    <string name="cd_home">home</string>
+    <string name="cd_temp">temp</string>
+    <string name="cd_humi">humidity</string>
+
+    <string name="hint_temp">온도</string>
+    <string name="hint_humidity">습도</string>
+    <string name="approve">확인</string>
+
+</resources>

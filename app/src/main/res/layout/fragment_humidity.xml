@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mycolor2">
+
+        <EditText
+            android:id="@+id/edtHumidity"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:hint="@string/hint_humidity"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_humidity"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/approve"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtHumidity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

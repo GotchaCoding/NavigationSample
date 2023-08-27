@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/gradient"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/btnRemoveSbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="옵저버 해제"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <Button
+                    android:id="@+id/btnRegisterSbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="옵저버 등록"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnRemoveSbs" />
+
+                <ImageView
+                    android:id="@+id/imgSbs"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/image_shape"
+                    android:layout_marginTop="10dp"
+                    android:textSize="40sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="온도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgSbs" />
+
+                <TextView
+                    android:id="@+id/humidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="습도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/temperature" />
+
+                <TextView
+                    android:id="@+id/tvSBSTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="온도"
+                    android:layout_marginStart="15dp"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toEndOf="@id/temperature"
+                    app:layout_constraintTop_toBottomOf="@id/imgSbs" />
+
+                <TextView
+                    android:id="@+id/tvSBSHumi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="습도"
+                    android:layout_marginStart="15dp"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toEndOf="@id/humidity"
+                    app:layout_constraintTop_toBottomOf="@id/tvSBSTemp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/gradient"
+                app:layout_constraintTop_toBottomOf="@id/cons1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <Button
+                    android:id="@+id/btnRemoveKbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="옵저버 해제"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <Button
+                    android:id="@+id/btnRegisterKbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="옵저버 등록"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnRemoveKbs" />
+
+                <ImageView
+                    android:id="@+id/imgKbs"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/image_shape"
+                    android:textSize="40sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/temperature2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="온도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgKbs" />
+
+                <TextView
+                    android:id="@+id/humidity2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="습도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/temperature2" />
+
+                <TextView
+                    android:id="@+id/tvKBSTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="온도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toEndOf="@id/temperature2"
+                    app:layout_constraintTop_toBottomOf="@id/imgKbs" />
+
+                <TextView
+                    android:id="@+id/tvKBSHumi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="습도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toEndOf="@id/humidity2"
+                    app:layout_constraintTop_toBottomOf="@id/tvKBSTemp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/gradient"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cons2"
+                app:layout_constraintVertical_bias="1.0">
+
+                <Button
+                    android:id="@+id/btnRemoveJtbc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="옵저버 해제"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <Button
+                    android:id="@+id/btnRegisterJtbc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="옵저버 등록"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnRemoveJtbc" />
+
+                <ImageView
+                    android:id="@+id/imgJtbc"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/image_shape"
+                    android:textSize="40sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/temperature3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="온도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgJtbc" />
+
+                <TextView
+                    android:id="@+id/humidity3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="습도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/temperature3" />
+
+                <TextView
+                    android:id="@+id/tvJTBCTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="온도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toEndOf="@id/temperature3"
+                    app:layout_constraintTop_toBottomOf="@id/imgJtbc" />
+
+                <TextView
+                    android:id="@+id/tvJTBCHumi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="습도"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toEndOf="@id/humidity3"
+                    app:layout_constraintTop_toBottomOf="@id/tvJTBCTemp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/edtTemp"-->
+        <!--            android:layout_width="100dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/edtHumi"-->
+        <!--            android:layout_width="100dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/edtTemp"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/btnTemp"-->
+        <!--            android:layout_width="80dp"-->
+        <!--            android:layout_height="40dp"-->
+        <!--            android:text="확인"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/edtHumi"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
