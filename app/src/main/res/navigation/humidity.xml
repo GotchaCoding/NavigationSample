@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/humidity"
-    app:startDestination="@+id/checkingHumidity">
+    app:startDestination="@+id/humidityScreen">
 
     <fragment
-        android:id="@+id/checkingHumidity"
+        android:id="@+id/humidityScreen"
         android:name="org.techtown.weathersystem.humidity.Humidity"
         tools:layout="@layout/fragment_humidity" />
 </navigation>

@@ -12,16 +12,14 @@
 
         <action
             android:id="@+id/action_temp_to_home"
-            app:destination="@+id/homeScreen" />
+            app:destination="@+id/home" />
         <argument
-            android:name="temp"
+            android:name="tmp_int"
             app:argType="integer"
-            android:defaultValue="1" />
+            android:defaultValue="0" />
+
     </fragment>
 
-    <fragment
-        android:id="@+id/homeScreen"
-        android:name="org.techtown.weathersystem.home.Home"
-        tools:layout="@layout/fragment_home" />
+
 
 </navigation>

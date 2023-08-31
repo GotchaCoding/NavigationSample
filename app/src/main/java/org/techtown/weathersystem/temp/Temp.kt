@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import org.techtown.weathersystem.R
 import org.techtown.weathersystem.WeatherData
 import org.techtown.weathersystem.databinding.FragmentTempBinding
@@ -41,7 +43,13 @@ class Temp : Fragment() {
             btnTemp.setOnClickListener {
                 val resultNum = edtTemp.text.toString().toInt()
                 weatherData.setTempChanged(resultNum)
+
+                it.findNavController().navigate(R.id.action_temp_to_home)
             }
         }
+    }
+
+    fun sendArg(){
+//        Temp
     }
 }

@@ -9,11 +9,5 @@
         android:id="@+id/homeScreen"
         android:name="org.techtown.weathersystem.home.Home"
         tools:layout="@layout/fragment_home">
-
-
-        <argument
-            android:name="weatherData"
-            app:argType="integer"
-            android:defaultValue="0" />
     </fragment>
 </navigation>

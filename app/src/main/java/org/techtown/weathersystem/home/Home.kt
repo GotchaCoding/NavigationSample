@@ -14,15 +14,18 @@ import org.techtown.weathersystem.R
 import org.techtown.weathersystem.Sbs
 import org.techtown.weathersystem.WeatherData
 import org.techtown.weathersystem.databinding.FragmentHomeBinding
-import org.techtown.weathersystem.di.WeatherDataProvider
-import org.techtown.weathersystem.di.WeatherDataProviderImpl
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class Home : Fragment() {
+class Home   : Fragment() {
+//    @Inject constructor(private val kbs : Kbs)
 
     @Inject
     lateinit var weatherData: WeatherData
+    @Inject
+    lateinit var sbs: Sbs
+//    @Inject
+//    lateinit var kbs: Kbs
 
     private var _binidng: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding
@@ -33,10 +36,9 @@ class Home : Fragment() {
 //    private val weatherDataProvider : WeatherDataProvider = WeatherDataProviderImpl
 //    private var weatherData : WeatherData = weatherDataProvider.provideWeatherData()
 
-    private var isRegisterObservers : Boolean = false
 
-    val kbs: Kbs = Kbs()
-    val sbs: Sbs = Sbs()
+    val kbs: Kbs = Kbs()  // 여기도 싱글턴으로 생성 및 주입 받아야 하네..
+//    val sbs: Sbs = Sbs()
     val jtbc: Jtbc = Jtbc()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,9 +54,9 @@ class Home : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(!isRegisterObservers) {
+        if(!weatherData.isRegisterObservers) {
             registerObservers()    //옵저버 등록은 최초 한번만 실행
-            isRegisterObservers = true
+            weatherData.isRegisterObservers = true
         }
 
         binding.apply{

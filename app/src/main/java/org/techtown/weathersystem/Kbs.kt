@@ -9,4 +9,15 @@ class Kbs : Observer {
         this.humidity = humidity
     }
 
+
+    companion object {
+        private var instance: Kbs? = null
+
+        fun getInstance(): Kbs? {
+            if (instance == null) {
+                instance = Kbs()
+            }
+            return instance!!
+        }
+    }
 }

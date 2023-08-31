@@ -1,10 +1,7 @@
 package org.techtown.weathersystem
 
-import android.annotation.SuppressLint
-import android.icu.text.RelativeDateTimeFormatter.Direction
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.*
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -40,7 +37,7 @@ class KiSangChungActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeScreen)
+            setOf(R.id.homeScreen, R.id.tempScreen, R.id.humidityScreen)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
 

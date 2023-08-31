@@ -5,6 +5,8 @@ class WeatherData : Subject {
     var temperature: Int = 0
     var humidity: Int = 0
 
+    var isRegisterObservers : Boolean = false
+
 
     override fun registerObserver(o: Observer) {
         observers.add(o)
