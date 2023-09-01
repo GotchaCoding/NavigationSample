@@ -1,23 +1,18 @@
 package org.techtown.weathersystem
 
-class Sbs : Observer {
-    var temperature: Int = 0
-    var humidity: Int = 0
+class SbsImpl : Sbs {
+    override var temperature: Int = 0
+    override var humidity: Int = 0
 
     override fun update(temperature: Int, humidity: Int) {
         this.temperature = temperature
         this.humidity = humidity
     }
 
+}
 
-    companion object {
-        private var instance: Sbs? = null
+interface Sbs : Observer {
+    var temperature: Int
+    var humidity: Int
 
-        fun getInstance(): Sbs? {
-            if (instance == null) {
-                instance = Sbs()
-            }
-            return instance!!
-        }
-    }
 }

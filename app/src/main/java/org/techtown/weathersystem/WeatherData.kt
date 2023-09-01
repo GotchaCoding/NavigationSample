@@ -4,10 +4,6 @@ class WeatherData : Subject {
     var observers: ArrayList<Observer> = arrayListOf()
     var temperature: Int = 0
     var humidity: Int = 0
-
-    var isRegisterObservers : Boolean = false
-
-
     override fun registerObserver(o: Observer) {
         observers.add(o)
     }
@@ -46,16 +42,5 @@ class WeatherData : Subject {
         this.humidity = humidity
         mesurementsChanged()
     }
-    companion object {
-        private var instance: WeatherData? = null
-
-        fun getInstance(): WeatherData? {
-            if (instance == null) {
-                instance = WeatherData()
-            }
-            return instance!!
-        }
-    }
-
 
 }

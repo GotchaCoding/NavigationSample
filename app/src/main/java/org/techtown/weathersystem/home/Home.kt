@@ -1,6 +1,7 @@
 package org.techtown.weathersystem.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,33 +19,32 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class Home   : Fragment() {
-//    @Inject constructor(private val kbs : Kbs)
 
     @Inject
     lateinit var weatherData: WeatherData
     @Inject
     lateinit var sbs: Sbs
-//    @Inject
-//    lateinit var kbs: Kbs
+    @Inject
+    lateinit var kbs: Kbs
 
     private var _binidng: FragmentHomeBinding? = null
     private val binding: FragmentHomeBinding
         get() = _binidng!!
 
-//    private var weatherData: WeatherData = WeatherData.getInstance()!!
-
-//    private val weatherDataProvider : WeatherDataProvider = WeatherDataProviderImpl
-//    private var weatherData : WeatherData = weatherDataProvider.provideWeatherData()
-
-
-    val kbs: Kbs = Kbs()  // 여기도 싱글턴으로 생성 및 주입 받아야 하네..
-//    val sbs: Sbs = Sbs()
     val jtbc: Jtbc = Jtbc()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        Log.e("kyh!!!", "HOME onCreate")
+        super.onCreate(savedInstanceState)
+        registerObservers()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.e("kyh!!!", "HOME onCreateView")
         _binidng = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_home, container, false)
         initView()
         return binding.root
@@ -54,10 +54,6 @@ class Home   : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(!weatherData.isRegisterObservers) {
-            registerObservers()    //옵저버 등록은 최초 한번만 실행
-            weatherData.isRegisterObservers = true
-        }
 
         binding.apply{
             temperature.text = sbs.temperature.toString()
@@ -116,7 +112,13 @@ class Home   : Fragment() {
         weatherData.registerObserver(jtbc)
     }
 
+    override fun onDestroyView() {
+        Log.e("kyh!!!", "HOME onDestroyView")
+        super.onDestroyView()
+    }
+
     override fun onDestroy() {
+        Log.e("kyh!!!", "HOME onDestroy")
         unremoveObservers()
         super.onDestroy()
     }

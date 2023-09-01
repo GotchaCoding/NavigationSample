@@ -12,11 +12,12 @@
 
         <action
             android:id="@+id/action_temp_to_home"
-            app:destination="@+id/home" />
-        <argument
-            android:name="tmp_int"
-            app:argType="integer"
-            android:defaultValue="0" />
+            app:destination="@+id/home">
+
+            <argument
+                android:name="test"
+                app:argType="integer" />
+        </action>
 
     </fragment>
 

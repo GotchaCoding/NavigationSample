@@ -6,12 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 import org.techtown.weathersystem.R
 import org.techtown.weathersystem.WeatherData
 import org.techtown.weathersystem.databinding.FragmentHumidityBinding
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class Humidity : Fragment() {
-    private var weatherData: WeatherData = WeatherData.getInstance()!!
+    @Inject
+    lateinit var weatherData: WeatherData
 
     private var _binidng: FragmentHumidityBinding? = null
     private val binding: FragmentHumidityBinding
